@@ -1,0 +1,12 @@
+D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\bin\Debug\Ren'Py IDE.exe.config
+D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\bin\Debug\Ren'Py IDE.exe
+D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\bin\Debug\Ren'Py IDE.pdb
+D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\bin\Debug\Ren'Py IDE.xml
+D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\obj\Debug\Ren'Py IDE.vbprojResolveAssemblyReference.cache
+D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\obj\Debug\Ren_Py_IDE.Main.resources
+D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\obj\Debug\Ren_Py_IDE.Resources.resources
+D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\obj\Debug\Ren'Py IDE.vbproj.GenerateResource.Cache
+D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\obj\Debug\Ren'Py IDE.exe
+D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\obj\Debug\Ren'Py IDE.xml
+D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\obj\Debug\Ren'Py IDE.pdb
+D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\obj\Debug\Ren_Py_IDE.NameInput.resources
