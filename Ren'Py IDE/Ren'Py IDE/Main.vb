@@ -80,7 +80,18 @@
     End Sub
 
     Private Sub SaveAsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveAsToolStripMenuItem.Click
-
+        Dim Saveas As New SaveFileDialog()
+        Dim myStreamWriter As System.IO.StreamWriter
+        Saveas.Filter = "Ren'Py Code (*.rpy)|*.rpy"
+        Saveas.CheckPathExists = True
+        Saveas.Title = "Save As"
+        Saveas.ShowDialog(Me)
+        Try
+            myStreamWriter = System.IO.File.AppendText(Saveas.FileName)
+            myStreamWriter.Write(CType(TabControl1.SelectedTab.Controls.Item(0), RichTextBox).Text)
+            myStreamWriter.Flush()
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -88,7 +99,8 @@
         Dim linenumber As Integer = CType(TabControl1.SelectedTab.Controls.Item(0), RichTextBox).GetLineFromCharIndex(caretindex)
         Dim characterXY As Point = CType(TabControl1.SelectedTab.Controls.Item(0), RichTextBox).GetPositionFromCharIndex(caretindex)
         Dim characterIndex As Integer = CType(TabControl1.SelectedTab.Controls.Item(0), RichTextBox).GetCharIndexFromPosition(characterXY)
-        LineNum.Text = "Line:" & linenumber
+        LineNum.Text = "Line: " & linenumber
+        ColNum.Text = "Characters: " & characterIndex
     End Sub
 #End Region
 
