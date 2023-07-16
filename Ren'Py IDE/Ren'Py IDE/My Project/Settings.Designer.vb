@@ -56,13 +56,25 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
-        Public Property LineNum() As Integer
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property TreePath() As String
             Get
-                Return CType(Me("LineNum"),Integer)
+                Return CType(Me("TreePath"),String)
             End Get
             Set
-                Me("LineNum") = value
+                Me("TreePath") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ImagePath() As String
+            Get
+                Return CType(Me("ImagePath"),String)
+            End Get
+            Set
+                Me("ImagePath") = value
             End Set
         End Property
     End Class

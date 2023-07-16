@@ -46,7 +46,13 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\logo base.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cropping image">
+      <HintPath>E:\User Data\Desktop\Cropping image.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -72,6 +78,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialogues\About.Designer.vb">
+      <DependentUpon>About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogues\CropImage.Designer.vb">
+      <DependentUpon>CropImage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\CropImage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogues\ResizeImage.Designer.vb">
+      <DependentUpon>ResizeImage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogues\ResizeImage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -94,15 +118,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Extras.vb" />
-    <Compile Include="NameInput.Designer.vb">
-      <DependentUpon>NameInput.vb</DependentUpon>
-    </Compile>
-    <Compile Include="NameInput.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Dialogues\About.resx">
+      <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogues\CropImage.resx">
+      <DependentUpon>CropImage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogues\ResizeImage.resx">
+      <DependentUpon>ResizeImage.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
@@ -111,9 +137,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NameInput.resx">
-      <DependentUpon>NameInput.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +150,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo base.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
