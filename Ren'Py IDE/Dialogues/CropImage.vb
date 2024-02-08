@@ -36,7 +36,7 @@
     End Sub
 
     Private Sub CropImage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
     End Sub
 
     Private Sub CropImage_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseDown

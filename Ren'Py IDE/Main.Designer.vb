@@ -56,11 +56,13 @@ Partial Class Main
         Me.CloseTabToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.RenameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.CharacterCounter = New System.Windows.Forms.Timer(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.LineNum = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ColNum = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.TextColour = New System.Windows.Forms.Timer(Me.components)
+        Me.TextColourResume = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -276,9 +278,9 @@ Partial Class Main
         Me.RenameToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.RenameToolStripMenuItem.Text = "Rename"
         '
-        'Timer1
+        'CharacterCounter
         '
-        Me.Timer1.Enabled = True
+        Me.CharacterCounter.Enabled = True
         '
         'StatusStrip1
         '
@@ -307,6 +309,16 @@ Partial Class Main
         Me.ColNum.Name = "ColNum"
         Me.ColNum.Size = New System.Drawing.Size(66, 17)
         Me.ColNum.Text = "Characters:"
+        '
+        'TextColour
+        '
+        Me.TextColour.Enabled = True
+        Me.TextColour.Interval = 1000
+        '
+        'TextColourResume
+        '
+        Me.TextColourResume.Enabled = True
+        Me.TextColourResume.Interval = 1000
         '
         'Main
         '
@@ -349,7 +361,7 @@ Partial Class Main
     Friend WithEvents CloseTabToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RenameToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents CharacterCounter As Timer
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents LineNum As ToolStripStatusLabel
     Friend WithEvents ColNum As ToolStripStatusLabel
@@ -368,4 +380,6 @@ Partial Class Main
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents FlipHorizontallyToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FlipVerticallyToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TextColour As Timer
+    Friend WithEvents TextColourResume As Timer
 End Class

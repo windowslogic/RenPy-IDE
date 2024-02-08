@@ -118,6 +118,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Other\OperandColours.vb" />
+    <Compile Include="Other\Variables.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Dialogues\About.resx">

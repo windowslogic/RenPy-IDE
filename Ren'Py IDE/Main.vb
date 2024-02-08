@@ -1,6 +1,7 @@
 ﻿Public Class Main
     Dim originalimage As Bitmap
     Dim Int As Integer = 0
+
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim rtb As New RichTextBox
@@ -71,68 +72,21 @@
                 Next
             Next
         Else
-            For Each n As TreeNode In TreeView1.Nodes
-                For Each no As TreeNode In n.Nodes
-                    If no.Text = "Please wait..." Then
-                        no.Remove()
-                    End If
-                Next
-            Next
+            TreeView1.Nodes.Clear()
+            TreeView1.Nodes.Add("Open a directory to start.")
         End If
     End Sub
 #End Region
 #Region "Menu"
     Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
-        Dim rtb As New RichTextBox
-        rtb.Font = New Font("Courier New", 12)
-        rtb.Dock = DockStyle.Fill
-        rtb.ForeColor = Color.White()
-        rtb.BackColor = Color.Black()
-        TabControl1.TabPages.Add("Untitled " & Int + 1)
-        TabControl1.SelectTab(Int)
-        TabControl1.SelectedTab.Controls.Add(rtb)
-        Int = Int + 1
+        New_Tab()
     End Sub
 
     Private Sub SaveAsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveAsToolStripMenuItem.Click
-
-        If TabControl1.SelectedTab.Text.Contains(".png") Or TabControl1.SelectedTab.Text.Contains(".jpg") Or TabControl1.SelectedTab.Text.Contains(".jpeg") Then
-            Dim Saveas As New SaveFileDialog()
-            Saveas.Filter = "PNG|*.png|JPEG|*.jpeg"
-            Saveas.CheckPathExists = True
-            Saveas.Title = "Save As"
-            Saveas.FileName = TabControl1.SelectedTab.Text
-            Try
-                If Saveas.ShowDialog(Me) = DialogResult.OK Then
-                    Select Case Saveas.FilterIndex
-                        Case 1
-                            CType(TabControl1.SelectedTab.Controls.Item(0), PictureBox).Image.Save(Saveas.FileName, System.Drawing.Imaging.ImageFormat.Png)
-                        Case 2
-                            CType(TabControl1.SelectedTab.Controls.Item(0), PictureBox).Image.Save(Saveas.FileName, System.Drawing.Imaging.ImageFormat.Jpeg)
-                    End Select
-                End If
-            Catch ex As Exception
-                MsgBox("Could Not save image.")
-            End Try
-        Else
-            Dim Saveas As New SaveFileDialog()
-            Dim myStreamWriter As System.IO.StreamWriter
-            Saveas.Filter = "Ren'Py Code (*.rpy)|*.rpy"
-            Saveas.CheckPathExists = True
-            Saveas.Title = "Save As"
-            Saveas.ShowDialog(Me)
-            Try
-                myStreamWriter = System.IO.File.AppendText(Saveas.FileName)
-                myStreamWriter.Write(CType(TabControl1.SelectedTab.Controls.Item(0), RichTextBox).Text)
-                myStreamWriter.Flush()
-            Catch ex As Exception
-                MsgBox("Could not save code.")
-            End Try
-        End If
-
+        Variables.Save()
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles CharacterCounter.Tick
         Try
             Dim caretindex As Integer = CType(TabControl1.SelectedTab.Controls.Item(0), RichTextBox).SelectionStart
             Dim linenumber As Integer = CType(TabControl1.SelectedTab.Controls.Item(0), RichTextBox).GetLineFromCharIndex(caretindex)
@@ -147,7 +101,7 @@
     Private Sub TreeView1_NodeMouseDoubleClick(sender As Object, e As TreeNodeMouseClickEventArgs) Handles TreeView1.NodeMouseDoubleClick
 
         If Not TreeView1.SelectedNode.Text.Contains(".rpy") Then
-            If TreeView1.SelectedNode.Text.Contains(".png") Or TreeView1.SelectedNode.Text.Contains(".jpg") Or TreeView1.SelectedNode.Text.Contains(".jpeg") Then
+            If TreeView1.SelectedNode.Text.Contains(".png") Or TreeView1.SelectedNode.Text.Contains(".jpg") Or TreeView1.SelectedNode.Text.Contains(".jpeg") Or TreeView1.SelectedNode.Text.Contains(".gif") Then
                 Dim picbox As New PictureBox
                 picbox.Font = New Font("Courier New", 12)
                 picbox.Dock = DockStyle.Fill
@@ -161,7 +115,7 @@
                 Dim MySelectedNode As TreeNode = e.Node
                 Try
                     picbox.Load(MySelectedNode.FullPath)
-                    picbox.SizeMode = PictureBoxSizeMode.StretchImage
+                    picbox.SizeMode = PictureBoxSizeMode.Zoom
                     originalimage = New Bitmap(picbox.Image)
 
                     Dim width As Integer = originalimage.Width
@@ -250,10 +204,6 @@
         About.ShowDialog()
     End Sub
 
-    Private Sub ResizeToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        ResizeImage.ShowDialog()
-    End Sub
-
     Public Overloads Shared Function ResizeImage(SourceImage As Drawing.Image, TargetWidth As Int32, TargetHeight As Int32) As Drawing.Bitmap
         Dim bmSource = New Drawing.Bitmap(SourceImage)
 
@@ -297,6 +247,87 @@
 
         Return bmDest
     End Function
-#End Region
 
+    Private Sub CloseTabToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseTabToolStripMenuItem.Click
+        If Int > 1 Then
+            Int = Int - 1
+        End If
+        If TabControl1.SelectedTab.Text.Contains(".png") Or TabControl1.SelectedTab.Text.Contains(".jpg") Or TabControl1.SelectedTab.Text.Contains(".jpeg") Then
+            If Not CType(TabControl1.SelectedTab.Controls.Item(0), PictureBox).Image Is Nothing Then
+                If MsgBox("You may have unsaved changes to the image you're currently trying to close. Do you want to save those changes?", MsgBoxStyle.YesNoCancel, "Unsaved Changes") = MsgBoxResult.Yes Then
+                    Variables.Save()
+                ElseIf MsgBoxResult.No Then
+                    Variables.CloseTab()
+                Else
+                    Int = Int + 1
+                End If
+
+            ElseIf CType(TabControl1.SelectedTab.Controls.Item(0), RichTextBox).Text = "" Then
+                Variables.CloseTab()
+            Else
+                If MsgBox("You may have unsaved changes to the code you're currently trying to close. Do you want to save those changes?", MsgBoxStyle.YesNoCancel, "Unsaved Changes") = MsgBoxResult.Yes Then
+                    Variables.Save()
+                Else
+                    Variables.CloseTab()
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If TabControl1.SelectedTab.Text.Contains(".png") Or TabControl1.SelectedTab.Text.Contains(".jpg") Or TabControl1.SelectedTab.Text.Contains(".jpeg") Then
+            If Not CType(TabControl1.SelectedTab.Controls.Item(0), PictureBox).Image Is Nothing Then
+                If MsgBox("You may have unsaved changes to the image you're currently trying to close. Do you want to save those changes?", MsgBoxStyle.YesNoCancel, "Unsaved Changes") = MsgBoxResult.Yes Then
+                    Variables.Save()
+                    e.Cancel = True
+                ElseIf MsgBoxResult.No Then
+                    End
+                Else
+                    End
+                End If
+
+            ElseIf CType(TabControl1.SelectedTab.Controls.Item(0), RichTextBox).Text = "" Then
+                End
+            Else
+                If MsgBox("You may have unsaved changes to the code you're currently trying to close. Do you want to save those changes?", MsgBoxStyle.YesNoCancel, "Unsaved Changes") = MsgBoxResult.Yes Then
+                    Variables.Save()
+                    e.Cancel = True
+                Else
+                    End
+                End If
+            End If
+        End If
+
+    End Sub
+#End Region
+#Region "Functions"
+    Private Sub New_Tab()
+        Dim rtb As New RichTextBox
+        rtb.Font = New Font("Courier New", 12)
+        rtb.Dock = DockStyle.Fill
+        rtb.ForeColor = Color.White()
+        rtb.BackColor = Color.Black()
+        TabControl1.TabPages.Add("Untitled " & Int + 1)
+        TabControl1.SelectTab(Int)
+        TabControl1.SelectedTab.Controls.Add(rtb)
+        Int = Int + 1
+    End Sub
+
+    Private Sub TextColour_Tick(sender As Object, e As EventArgs) Handles TextColour.Tick
+        Try
+            If CType(TabControl1.SelectedTab.Controls.Item(0), RichTextBox).SelectedText.Length = 0 Then
+                Dim cls As New OperandColours
+                cls.ColorVisibleLines(CType(TabControl1.SelectedTab.Controls.Item(0), RichTextBox))
+            Else
+                TextColour.Stop()
+            End If
+        Catch ex As exception
+        End Try
+
+    End Sub
+
+    Private Sub TextColourResume_Tick(sender As Object, e As EventArgs) Handles TextColourResume.Tick
+        TextColour.Start()
+    End Sub
+#End Region
 End Class

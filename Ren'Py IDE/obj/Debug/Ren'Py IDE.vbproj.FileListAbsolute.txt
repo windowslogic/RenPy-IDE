@@ -13,3 +13,17 @@ D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\bin\Debug\Cropping image.dll
 D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\obj\Debug\Ren_Py_IDE.CropImage.resources
 D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\obj\Debug\Ren_Py_IDE.About.resources
 D:\Git\RenPy-IDE\Ren'Py IDE\Ren'Py IDE\obj\Debug\Ren_Py_IDE.ResizeImage.resources
+J:\Projects\RenPy IDE\Ren'Py IDE\bin\Debug\Ren'Py IDE.exe.config
+J:\Projects\RenPy IDE\Ren'Py IDE\bin\Debug\Ren'Py IDE.exe
+J:\Projects\RenPy IDE\Ren'Py IDE\bin\Debug\Ren'Py IDE.pdb
+J:\Projects\RenPy IDE\Ren'Py IDE\bin\Debug\Ren'Py IDE.xml
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Debug\Ren'Py IDE.vbprojResolveAssemblyReference.cache
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Debug\Ren_Py_IDE.About.resources
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Debug\Ren_Py_IDE.CropImage.resources
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Debug\Ren_Py_IDE.ResizeImage.resources
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Debug\Ren_Py_IDE.Main.resources
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Debug\Ren_Py_IDE.Resources.resources
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Debug\Ren'Py IDE.vbproj.GenerateResource.Cache
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Debug\Ren'Py IDE.exe
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Debug\Ren'Py IDE.xml
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Debug\Ren'Py IDE.pdb
