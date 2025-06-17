@@ -28,18 +28,19 @@ Partial Class ResizeImage
         Me.YLabel = New System.Windows.Forms.Label()
         Me.OKButton = New System.Windows.Forms.Button()
         Me.CloseButton = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'XText
         '
-        Me.XText.Location = New System.Drawing.Point(39, 12)
+        Me.XText.Location = New System.Drawing.Point(35, 34)
         Me.XText.Name = "XText"
         Me.XText.Size = New System.Drawing.Size(100, 20)
         Me.XText.TabIndex = 0
         '
         'YText
         '
-        Me.YText.Location = New System.Drawing.Point(168, 12)
+        Me.YText.Location = New System.Drawing.Point(164, 34)
         Me.YText.Name = "YText"
         Me.YText.Size = New System.Drawing.Size(100, 20)
         Me.YText.TabIndex = 1
@@ -47,7 +48,7 @@ Partial Class ResizeImage
         'XLabel
         '
         Me.XLabel.AutoSize = True
-        Me.XLabel.Location = New System.Drawing.Point(16, 15)
+        Me.XLabel.Location = New System.Drawing.Point(12, 37)
         Me.XLabel.Name = "XLabel"
         Me.XLabel.Size = New System.Drawing.Size(17, 13)
         Me.XLabel.TabIndex = 2
@@ -56,7 +57,7 @@ Partial Class ResizeImage
         'YLabel
         '
         Me.YLabel.AutoSize = True
-        Me.YLabel.Location = New System.Drawing.Point(145, 15)
+        Me.YLabel.Location = New System.Drawing.Point(141, 37)
         Me.YLabel.Name = "YLabel"
         Me.YLabel.Size = New System.Drawing.Size(17, 13)
         Me.YLabel.TabIndex = 3
@@ -64,7 +65,7 @@ Partial Class ResizeImage
         '
         'OKButton
         '
-        Me.OKButton.Location = New System.Drawing.Point(116, 38)
+        Me.OKButton.Location = New System.Drawing.Point(112, 60)
         Me.OKButton.Name = "OKButton"
         Me.OKButton.Size = New System.Drawing.Size(75, 23)
         Me.OKButton.TabIndex = 2
@@ -74,12 +75,21 @@ Partial Class ResizeImage
         'CloseButton
         '
         Me.CloseButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.CloseButton.Location = New System.Drawing.Point(197, 38)
+        Me.CloseButton.Location = New System.Drawing.Point(193, 60)
         Me.CloseButton.Name = "CloseButton"
         Me.CloseButton.Size = New System.Drawing.Size(75, 23)
         Me.CloseButton.TabIndex = 3
         Me.CloseButton.Text = "Cancel"
         Me.CloseButton.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(199, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Resize the image using the boxes below."
         '
         'ResizeImage
         '
@@ -87,7 +97,8 @@ Partial Class ResizeImage
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.CloseButton
-        Me.ClientSize = New System.Drawing.Size(284, 71)
+        Me.ClientSize = New System.Drawing.Size(279, 95)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.CloseButton)
         Me.Controls.Add(Me.OKButton)
         Me.Controls.Add(Me.YLabel)
@@ -113,4 +124,5 @@ Partial Class ResizeImage
     Friend WithEvents YLabel As Label
     Friend WithEvents OKButton As Button
     Friend WithEvents CloseButton As Button
+    Friend WithEvents Label1 As Label
 End Class

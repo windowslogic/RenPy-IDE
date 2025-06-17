@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Ren'Py Integrated Development Environment")>
 <Assembly: AssemblyCompany("Alethila")>
 <Assembly: AssemblyProduct("Ren'Py Integrated Development Environment")>
-<Assembly: AssemblyCopyright("Copyright © 2023 Alethila")>
+<Assembly: AssemblyCopyright("Copyright © 2025 Alethila")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

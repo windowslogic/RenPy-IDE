@@ -1,0 +1,15 @@
+J:\Projects\RenPy IDE\Ren'Py IDE\bin\Release\Ren'Py IDE.exe.config
+J:\Projects\RenPy IDE\Ren'Py IDE\bin\Release\Ren'Py IDE.exe
+J:\Projects\RenPy IDE\Ren'Py IDE\bin\Release\Ren'Py IDE.pdb
+J:\Projects\RenPy IDE\Ren'Py IDE\bin\Release\Ren'Py IDE.xml
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Release\Ren'Py IDE.vbprojAssemblyReference.cache
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Release\Ren_Py_IDE.About.resources
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Release\Ren_Py_IDE.CropImage.resources
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Release\Ren_Py_IDE.ResizeImage.resources
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Release\Ren_Py_IDE.Main.resources
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Release\Ren_Py_IDE.Resources.resources
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Release\Ren'Py IDE.vbproj.GenerateResource.cache
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Release\Ren'Py IDE.vbproj.CoreCompileInputs.cache
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Release\Ren'Py IDE.exe
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Release\Ren'Py IDE.xml
+J:\Projects\RenPy IDE\Ren'Py IDE\obj\Release\Ren'Py IDE.pdb
