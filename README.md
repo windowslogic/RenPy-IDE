@@ -1,16 +1,16 @@
+# In Hiatus
+
+Due to the overwhelming amount of projects I am currently working on, this project is now on hiatus. I will get to it when I have more free time and less projects to work on.
+
 # RenPy-IDE
 
 **A user-friendly IDE to help you create Ren’Py visual novels, built with Visual Basic .NET.**
-
----
 
 ## What is RenPy-IDE?
 
 RenPy-IDE is a graphical program that helps you make games using [Ren'Py](https://www.renpy.org/), a popular engine for visual novels and interactive stories, without having to write code by hand. With helpful visual tools for editing images, positioning them on the screen, and organizing your game scenes, RenPy-IDE aims to make game creation accessible to everyone—even if you have never programmed before!
 
 This project is still under active development. Feedback and contributions are welcome!
-
----
 
 ## Features
 
@@ -20,8 +20,6 @@ This project is still under active development. Feedback and contributions are w
 - **Code Exerpts:** Use code exerpts to add blocks of code common to Ren'Py games, like clickable sections, drag-and-drop or story beats. (In-development)
 - **Templates:** Use pre-made templates to easily and quickly create parts of your game.
 - **Open Source:** Anyone can contribute and help the software grow, free for everyone forever!
-
----
 
 ## How to Get Started
 
@@ -57,26 +55,18 @@ This project is still under active development. Feedback and contributions are w
 - **Feedback:**  
   - Your feedback helps make RenPy-IDE better for everyone. Please share your thoughts—even if you're not sure if it's a "bug"!
 
----
-
 ## License
 
 RenPy-IDE is free software, released under the [GNU General Public License v3.0](LICENSE).
-
----
 
 ## Contributing & Building
 
 - This project is early in development, and all help is welcome! If you have ideas, find problems, or want to help with documentation, programming, or testing, please open an issue or pull request.
 - You can build Ren'Py IDE using Visual Studio 2017 with .NET Desktop Development installed.
 
----
-
 ## Acknowledgments
 
 - Built using Visual Basic .NET.
 - Inspired by the Ren'Py community and all those who want simpler tools to create stories.
-
----
 
 *Happy creating!*
