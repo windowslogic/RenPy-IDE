@@ -2,6 +2,8 @@
 
 Due to the overwhelming amount of projects I am currently working on, this project is now on hiatus. I will get to it when I have more free time and less projects to work on.
 
+Possibility of re-writing this in C# instead of VB.NET as I am more famililar with C languages these days and C# can technically do more.
+
 # RenPy-IDE
 
 **A user-friendly IDE to help you create Ren’Py visual novels, built with Visual Basic .NET.**
